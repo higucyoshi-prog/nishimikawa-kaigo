@@ -1,0 +1,1369 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>西三河在宅介護センター｜愛知県刈谷市の地域密着型介護サービス</title>
+  <meta name="description" content="特定非営利活動法人 西三河在宅介護センター。愛知県刈谷市で居宅介護支援・訪問介護・通所介護を提供。築100年の古民家で、地域に寄り添った温かい介護サービスをお届けします。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <style>
+    /* ===== Reset & Base ===== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Noto Sans JP', 'ヒラギノ角ゴ Pro', sans-serif;
+      color: #3d2b1a;
+      background: #fffdf8;
+      line-height: 1.8;
+    }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+
+    /* ===== Color Variables ===== */
+    :root {
+      --primary:   #c0652a;   /* 温かみのある橙茶 */
+      --primary-l: #e8845a;
+      --primary-d: #8a3d14;
+      --accent:    #6a9e6a;   /* 緑 */
+      --bg:        #fffdf8;
+      --bg2:       #fdf5e8;
+      --bg3:       #f5ebe0;
+      --text:      #3d2b1a;
+      --text-m:    #6b4c35;
+      --text-l:    #9e7a5e;
+      --white:     #ffffff;
+      --border:    #e0cdb8;
+    }
+
+    /* ===== Utility ===== */
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+    .section    { padding: 80px 0; }
+    .section-title {
+      font-family: 'Noto Serif JP', serif;
+      font-size: clamp(1.6rem, 4vw, 2.2rem);
+      color: var(--primary-d);
+      text-align: center;
+      position: relative;
+      margin-bottom: 16px;
+    }
+    .section-title::after {
+      content: '';
+      display: block;
+      width: 60px;
+      height: 3px;
+      background: var(--primary);
+      border-radius: 2px;
+      margin: 14px auto 0;
+    }
+    .section-sub {
+      text-align: center;
+      color: var(--text-m);
+      font-size: 0.95rem;
+      margin-bottom: 52px;
+    }
+    .btn {
+      display: inline-block;
+      padding: 14px 36px;
+      border-radius: 50px;
+      font-size: 1rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.25s;
+      letter-spacing: 0.05em;
+    }
+    .btn-primary {
+      background: var(--primary);
+      color: var(--white);
+      box-shadow: 0 4px 16px rgba(192,101,42,0.3);
+    }
+    .btn-primary:hover { background: var(--primary-d); transform: translateY(-2px); }
+    .btn-outline {
+      border: 2px solid var(--primary);
+      color: var(--primary);
+      background: transparent;
+    }
+    .btn-outline:hover { background: var(--primary); color: var(--white); }
+    .tag {
+      display: inline-block;
+      padding: 4px 14px;
+      border-radius: 20px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      background: var(--primary);
+      color: var(--white);
+    }
+
+    /* ===== Header / Nav ===== */
+    header {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1000;
+      background: rgba(255,253,248,0.95);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+      transition: box-shadow 0.3s;
+    }
+    header.scrolled { box-shadow: 0 2px 20px rgba(0,0,0,0.08); }
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 68px;
+      padding: 0 24px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .logo { display: flex; align-items: center; gap: 12px; }
+    .logo-icon {
+      width: 44px; height: 44px;
+      background: var(--primary);
+      border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .logo-icon svg { width: 26px; height: 26px; fill: white; }
+    .logo-text { line-height: 1.2; }
+    .logo-text .sub { font-size: 0.65rem; color: var(--text-l); letter-spacing: 0.1em; }
+    .logo-text .main { font-family: 'Noto Serif JP', serif; font-size: 1rem; font-weight: 700; color: var(--primary-d); }
+    nav { display: flex; gap: 28px; align-items: center; }
+    nav a {
+      font-size: 0.88rem;
+      font-weight: 500;
+      color: var(--text-m);
+      position: relative;
+      padding-bottom: 2px;
+      transition: color 0.2s;
+    }
+    nav a::after {
+      content: '';
+      position: absolute;
+      bottom: -2px; left: 0; right: 0;
+      height: 2px;
+      background: var(--primary);
+      transform: scaleX(0);
+      transition: transform 0.2s;
+    }
+    nav a:hover { color: var(--primary); }
+    nav a:hover::after { transform: scaleX(1); }
+    .nav-contact {
+      padding: 8px 20px;
+      background: var(--primary);
+      color: var(--white) !important;
+      border-radius: 50px;
+      font-size: 0.85rem !important;
+      font-weight: 700 !important;
+    }
+    .nav-contact:hover { background: var(--primary-d) !important; }
+    .nav-contact::after { display: none !important; }
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; }
+    .hamburger span { display: block; width: 24px; height: 2px; background: var(--primary-d); border-radius: 2px; transition: 0.3s; }
+    .mobile-nav {
+      display: none;
+      position: fixed;
+      inset: 68px 0 0 0;
+      background: rgba(255,253,248,0.98);
+      z-index: 999;
+      padding: 32px 24px;
+      flex-direction: column;
+      gap: 0;
+    }
+    .mobile-nav a {
+      display: block;
+      padding: 16px 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 1.1rem;
+      font-weight: 500;
+      color: var(--text);
+    }
+    .mobile-nav.open { display: flex; }
+
+    /* ===== Hero ===== */
+    #hero {
+      padding-top: 68px;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(ellipse at 70% 50%, rgba(192,101,42,0.08) 0%, transparent 60%),
+        radial-gradient(ellipse at 20% 80%, rgba(106,158,106,0.08) 0%, transparent 50%),
+        var(--bg2);
+    }
+    .hero-pattern {
+      position: absolute;
+      inset: 0;
+      background-image:
+        radial-gradient(circle at 1px 1px, rgba(192,101,42,0.06) 1px, transparent 0);
+      background-size: 32px 32px;
+      pointer-events: none;
+    }
+    .hero-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+      padding: 80px 0 60px;
+      position: relative;
+    }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(192,101,42,0.12);
+      color: var(--primary);
+      padding: 6px 16px;
+      border-radius: 50px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      margin-bottom: 20px;
+    }
+    .hero-badge::before {
+      content: '';
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: var(--primary);
+    }
+    .hero-title {
+      font-family: 'Noto Serif JP', serif;
+      font-size: clamp(2rem, 5vw, 3rem);
+      line-height: 1.4;
+      color: var(--primary-d);
+      margin-bottom: 24px;
+    }
+    .hero-title em {
+      font-style: normal;
+      color: var(--primary);
+      position: relative;
+    }
+    .hero-title em::after {
+      content: '';
+      position: absolute;
+      bottom: 2px; left: 0; right: 0;
+      height: 3px;
+      background: rgba(192,101,42,0.3);
+      border-radius: 2px;
+    }
+    .hero-desc {
+      color: var(--text-m);
+      font-size: 1.05rem;
+      line-height: 1.9;
+      margin-bottom: 36px;
+    }
+    .hero-btns { display: flex; gap: 16px; flex-wrap: wrap; }
+    .hero-visual {
+      position: relative;
+      display: flex;
+      justify-content: center;
+    }
+    .hero-card-main {
+      width: 100%;
+      max-width: 420px;
+      background: var(--white);
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 20px 60px rgba(61,43,26,0.15);
+    }
+    .hero-img-placeholder {
+      background: linear-gradient(135deg, #e8c4a0 0%, #d4956a 50%, #b86a3d 100%);
+      height: 240px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .hero-img-placeholder svg { width: 64px; height: 64px; fill: rgba(255,255,255,0.8); }
+    .hero-img-placeholder p { color: rgba(255,255,255,0.9); font-size: 0.85rem; font-weight: 500; }
+    .hero-card-info { padding: 24px; }
+    .hero-card-info h3 { font-family: 'Noto Serif JP', serif; font-size: 1.1rem; color: var(--primary-d); margin-bottom: 8px; }
+    .hero-card-info p { font-size: 0.9rem; color: var(--text-m); }
+    .hero-float-1, .hero-float-2 {
+      position: absolute;
+      background: var(--white);
+      border-radius: 16px;
+      padding: 14px 18px;
+      box-shadow: 0 8px 32px rgba(61,43,26,0.12);
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--primary-d);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .hero-float-1 { bottom: -20px; left: -30px; }
+    .hero-float-2 { top: 30px; right: -30px; }
+    .float-icon { width: 36px; height: 36px; border-radius: 10px; background: var(--bg3); display: flex; align-items: center; justify-content: center; font-size: 1.2rem; }
+
+    /* ===== Stats ===== */
+    #stats {
+      background: var(--primary);
+      padding: 52px 0;
+    }
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+    }
+    .stat-item {
+      text-align: center;
+      padding: 16px;
+      border-right: 1px solid rgba(255,255,255,0.2);
+    }
+    .stat-item:last-child { border-right: none; }
+    .stat-num {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 2.4rem;
+      font-weight: 700;
+      color: var(--white);
+      line-height: 1;
+    }
+    .stat-num span { font-size: 1.1rem; }
+    .stat-label {
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.85);
+      margin-top: 6px;
+    }
+
+    /* ===== About ===== */
+    #about { background: var(--bg); }
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: center;
+    }
+    .about-img {
+      position: relative;
+    }
+    .about-img-inner {
+      background: linear-gradient(135deg, #c8a47e 0%, #a07050 100%);
+      border-radius: 20px;
+      height: 380px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 16px;
+      box-shadow: 0 16px 48px rgba(61,43,26,0.18);
+    }
+    .about-img-inner svg { width: 80px; height: 80px; fill: rgba(255,255,255,0.7); }
+    .about-img-inner p { color: rgba(255,255,255,0.85); font-size: 1rem; }
+    .about-img-badge {
+      position: absolute;
+      bottom: -20px; right: -20px;
+      background: var(--white);
+      border-radius: 16px;
+      padding: 16px 20px;
+      box-shadow: 0 8px 28px rgba(61,43,26,0.15);
+      text-align: center;
+    }
+    .about-img-badge .num { font-family: 'Noto Serif JP', serif; font-size: 2rem; font-weight: 700; color: var(--primary); line-height: 1; }
+    .about-img-badge .txt { font-size: 0.78rem; color: var(--text-m); margin-top: 4px; }
+    .about-text h2 {
+      font-family: 'Noto Serif JP', serif;
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      color: var(--primary-d);
+      margin-bottom: 20px;
+      line-height: 1.5;
+    }
+    .about-text p { color: var(--text-m); margin-bottom: 16px; font-size: 0.98rem; line-height: 1.9; }
+    .about-values { display: flex; flex-direction: column; gap: 12px; margin-top: 28px; }
+    .about-value-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      padding: 16px;
+      background: var(--bg2);
+      border-radius: 12px;
+    }
+    .value-icon { font-size: 1.4rem; flex-shrink: 0; }
+    .value-text strong { display: block; font-weight: 700; color: var(--primary-d); font-size: 0.95rem; margin-bottom: 2px; }
+    .value-text span { font-size: 0.85rem; color: var(--text-m); }
+
+    /* ===== Services ===== */
+    #services { background: var(--bg2); }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+    .service-card {
+      background: var(--white);
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 4px 24px rgba(61,43,26,0.08);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .service-card:hover { transform: translateY(-6px); box-shadow: 0 16px 48px rgba(61,43,26,0.14); }
+    .service-card-header {
+      padding: 36px 28px 24px;
+      text-align: center;
+    }
+    .service-icon-wrap {
+      width: 72px; height: 72px;
+      border-radius: 20px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 2rem;
+      margin: 0 auto 16px;
+    }
+    .service-icon-wrap.orange { background: rgba(192,101,42,0.1); }
+    .service-icon-wrap.green  { background: rgba(106,158,106,0.12); }
+    .service-icon-wrap.blue   { background: rgba(74,130,180,0.1); }
+    .service-card h3 {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 1.2rem;
+      color: var(--primary-d);
+      margin-bottom: 10px;
+    }
+    .service-card-desc { color: var(--text-m); font-size: 0.9rem; line-height: 1.8; }
+    .service-card-body { padding: 0 28px 28px; border-top: 1px solid var(--border); padding-top: 20px; }
+    .service-features { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+    .service-features li {
+      display: flex; align-items: center; gap: 10px;
+      font-size: 0.88rem; color: var(--text-m);
+    }
+    .service-features li::before {
+      content: '✓';
+      color: var(--accent);
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+    .service-link {
+      display: block;
+      text-align: center;
+      margin-top: 16px;
+      padding: 10px;
+      background: var(--bg2);
+      border-radius: 50px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--primary);
+      transition: background 0.2s;
+    }
+    .service-link:hover { background: rgba(192,101,42,0.15); }
+
+    /* ===== Kominka ===== */
+    #kominka { background: var(--bg3); }
+    .kominka-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: center;
+    }
+    .kominka-text h2 {
+      font-family: 'Noto Serif JP', serif;
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      color: var(--primary-d);
+      margin-bottom: 20px;
+      line-height: 1.5;
+    }
+    .kominka-text p { color: var(--text-m); margin-bottom: 16px; font-size: 0.98rem; line-height: 1.9; }
+    .kominka-points {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-top: 24px;
+    }
+    .kominka-point {
+      padding: 16px;
+      background: var(--white);
+      border-radius: 12px;
+      text-align: center;
+      box-shadow: 0 2px 12px rgba(61,43,26,0.06);
+    }
+    .kominka-point .k-icon { font-size: 1.8rem; margin-bottom: 6px; }
+    .kominka-point strong { display: block; font-size: 0.88rem; color: var(--primary-d); font-weight: 700; }
+    .kominka-point span { font-size: 0.78rem; color: var(--text-l); }
+    .kominka-img-wrap {
+      position: relative;
+    }
+    .kominka-img {
+      background: linear-gradient(160deg, #d4a070 0%, #8b5e3a 60%, #5d3d1f 100%);
+      border-radius: 20px;
+      height: 400px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 16px;
+      box-shadow: 0 16px 48px rgba(61,43,26,0.2);
+    }
+    .kominka-img svg { width: 80px; height: 80px; fill: rgba(255,255,255,0.65); }
+    .kominka-img p { color: rgba(255,255,255,0.8); font-size: 0.9rem; }
+    .kominka-year {
+      position: absolute;
+      top: -16px; left: -16px;
+      background: var(--primary);
+      color: var(--white);
+      border-radius: 12px;
+      padding: 12px 18px;
+      font-family: 'Noto Serif JP', serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      box-shadow: 0 4px 16px rgba(192,101,42,0.4);
+    }
+    .kominka-year span { display: block; font-size: 0.7rem; font-weight: 400; opacity: 0.85; }
+
+    /* ===== Flow ===== */
+    #flow { background: var(--bg); }
+    .flow-steps {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    .flow-step {
+      display: grid;
+      grid-template-columns: 60px 1fr;
+      gap: 24px;
+      align-items: flex-start;
+      padding: 28px 0;
+      position: relative;
+    }
+    .flow-step:not(:last-child)::after {
+      content: '';
+      position: absolute;
+      left: 29px;
+      top: 60px;
+      bottom: -4px;
+      width: 2px;
+      background: linear-gradient(to bottom, var(--primary) 0%, var(--border) 100%);
+    }
+    .flow-num {
+      width: 60px; height: 60px;
+      border-radius: 50%;
+      background: var(--primary);
+      color: var(--white);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Noto Serif JP', serif;
+      font-size: 1.3rem;
+      font-weight: 700;
+      flex-shrink: 0;
+      box-shadow: 0 4px 16px rgba(192,101,42,0.3);
+      position: relative;
+      z-index: 1;
+    }
+    .flow-body h4 {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 1.1rem;
+      color: var(--primary-d);
+      margin-bottom: 6px;
+      padding-top: 14px;
+    }
+    .flow-body p { font-size: 0.9rem; color: var(--text-m); line-height: 1.8; }
+
+    /* ===== Info / Company ===== */
+    #info { background: var(--bg2); }
+    .info-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+    }
+    .info-table-wrap { background: var(--white); border-radius: 16px; padding: 28px; box-shadow: 0 2px 16px rgba(61,43,26,0.06); }
+    .info-table-wrap h3 {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 1.15rem;
+      color: var(--primary-d);
+      margin-bottom: 20px;
+      padding-bottom: 12px;
+      border-bottom: 2px solid var(--primary);
+    }
+    table.info-tbl { width: 100%; border-collapse: collapse; }
+    table.info-tbl tr { border-bottom: 1px solid var(--border); }
+    table.info-tbl tr:last-child { border-bottom: none; }
+    table.info-tbl th {
+      padding: 12px 8px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--text-l);
+      text-align: left;
+      white-space: nowrap;
+      width: 110px;
+      vertical-align: top;
+    }
+    table.info-tbl td {
+      padding: 12px 8px;
+      font-size: 0.92rem;
+      color: var(--text);
+      line-height: 1.7;
+    }
+    .map-wrap {
+      background: var(--white);
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 2px 16px rgba(61,43,26,0.06);
+    }
+    .map-placeholder {
+      background: linear-gradient(135deg, #e8ddd0 0%, #d0c0a8 100%);
+      height: 280px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .map-placeholder svg { width: 48px; height: 48px; fill: rgba(100,70,40,0.4); }
+    .map-placeholder p { color: rgba(100,70,40,0.7); font-size: 0.85rem; }
+    .map-info { padding: 20px 24px; }
+    .map-info address { font-style: normal; font-size: 0.92rem; color: var(--text-m); line-height: 1.8; }
+    .map-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 10px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--primary);
+      border-bottom: 1px solid rgba(192,101,42,0.3);
+    }
+
+    /* ===== Contact ===== */
+    #contact { background: var(--primary-d); }
+    .contact-inner { text-align: center; max-width: 700px; margin: 0 auto; }
+    .contact-inner h2 {
+      font-family: 'Noto Serif JP', serif;
+      font-size: clamp(1.6rem, 4vw, 2.2rem);
+      color: var(--white);
+      margin-bottom: 16px;
+    }
+    .contact-inner h2::after { display: none; }
+    .contact-inner p { color: rgba(255,255,255,0.8); font-size: 0.98rem; margin-bottom: 40px; line-height: 1.9; }
+    .contact-cards {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin-bottom: 32px;
+    }
+    .contact-card {
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 16px;
+      padding: 28px 20px;
+      backdrop-filter: blur(4px);
+      transition: background 0.2s;
+    }
+    .contact-card:hover { background: rgba(255,255,255,0.15); }
+    .contact-card .c-icon { font-size: 2rem; margin-bottom: 10px; }
+    .contact-card h4 { color: var(--white); font-size: 0.95rem; font-weight: 700; margin-bottom: 8px; }
+    .contact-card .tel { color: var(--white); font-family: 'Noto Serif JP', serif; font-size: 1.6rem; font-weight: 700; letter-spacing: 0.05em; }
+    .contact-card .hours { color: rgba(255,255,255,0.7); font-size: 0.78rem; margin-top: 4px; }
+    .contact-form {
+      background: var(--white);
+      border-radius: 20px;
+      padding: 36px;
+      text-align: left;
+    }
+    .contact-form h3 {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 1.15rem;
+      color: var(--primary-d);
+      margin-bottom: 24px;
+      text-align: center;
+    }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px; }
+    .form-group { margin-bottom: 16px; }
+    .form-group label { display: block; font-size: 0.85rem; font-weight: 700; color: var(--text-m); margin-bottom: 6px; }
+    .form-group label .req {
+      background: var(--primary);
+      color: var(--white);
+      font-size: 0.68rem;
+      padding: 2px 6px;
+      border-radius: 4px;
+      margin-left: 6px;
+      vertical-align: middle;
+    }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 12px 16px;
+      border: 1.5px solid var(--border);
+      border-radius: 10px;
+      font-size: 0.95rem;
+      font-family: inherit;
+      color: var(--text);
+      background: var(--bg);
+      transition: border-color 0.2s;
+      outline: none;
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus { border-color: var(--primary); }
+    .form-group textarea { resize: vertical; min-height: 100px; }
+    .form-submit {
+      text-align: center;
+      margin-top: 8px;
+    }
+    .form-submit button {
+      background: var(--primary);
+      color: var(--white);
+      border: none;
+      padding: 16px 56px;
+      border-radius: 50px;
+      font-size: 1rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.25s;
+      box-shadow: 0 4px 16px rgba(192,101,42,0.35);
+    }
+    .form-submit button:hover { background: var(--primary-d); transform: translateY(-2px); }
+
+    /* ===== Footer ===== */
+    footer {
+      background: #2a1a0e;
+      color: rgba(255,255,255,0.7);
+      padding: 56px 0 28px;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.8fr 1fr 1fr;
+      gap: 48px;
+      margin-bottom: 48px;
+    }
+    .footer-about .footer-logo {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 1.05rem;
+      color: var(--white);
+      margin-bottom: 16px;
+    }
+    .footer-about .footer-logo span { display: block; font-size: 0.72rem; font-weight: 400; color: rgba(255,255,255,0.5); letter-spacing: 0.1em; }
+    .footer-about p { font-size: 0.85rem; line-height: 1.8; }
+    footer h4 { color: var(--white); font-size: 0.92rem; font-weight: 700; margin-bottom: 16px; }
+    footer ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    footer ul li a { font-size: 0.85rem; color: rgba(255,255,255,0.65); transition: color 0.2s; }
+    footer ul li a:hover { color: var(--primary-l); }
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.1);
+      padding-top: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .footer-bottom p { font-size: 0.8rem; }
+    .footer-bottom nav { display: flex; gap: 20px; }
+    .footer-bottom nav a { font-size: 0.78rem; color: rgba(255,255,255,0.5); }
+    .footer-bottom nav a:hover { color: rgba(255,255,255,0.8); }
+
+    /* ===== Scroll to Top ===== */
+    #toTop {
+      position: fixed;
+      bottom: 32px;
+      right: 32px;
+      width: 48px; height: 48px;
+      background: var(--primary);
+      color: var(--white);
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      box-shadow: 0 4px 16px rgba(192,101,42,0.4);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      transition: background 0.2s, transform 0.2s;
+      z-index: 900;
+    }
+    #toTop:hover { background: var(--primary-d); transform: translateY(-2px); }
+    #toTop.visible { display: flex; }
+
+    /* ===== Responsive ===== */
+    @media (max-width: 900px) {
+      .hero-content { grid-template-columns: 1fr; text-align: center; gap: 40px; }
+      .hero-btns { justify-content: center; }
+      .hero-float-1, .hero-float-2 { display: none; }
+      .about-grid { grid-template-columns: 1fr; gap: 40px; }
+      .about-img { order: -1; }
+      .services-grid { grid-template-columns: 1fr; }
+      .kominka-inner { grid-template-columns: 1fr; gap: 40px; }
+      .info-grid { grid-template-columns: 1fr; }
+      .contact-cards { grid-template-columns: 1fr; }
+      .stats-grid { grid-template-columns: repeat(2, 1fr); }
+      .stat-item:nth-child(2) { border-right: none; }
+      .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+      .footer-bottom { flex-direction: column; text-align: center; }
+      .form-row { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 640px) {
+      .section { padding: 60px 0; }
+      nav { display: none; }
+      .hamburger { display: flex; }
+      .stats-grid { grid-template-columns: 1fr 1fr; }
+      .kominka-points { grid-template-columns: 1fr 1fr; }
+      .contact-form { padding: 24px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ===== HEADER ===== -->
+<header id="header">
+  <div class="header-inner">
+    <a href="#" class="logo">
+      <div class="logo-icon">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm4 0h-2V8h2v8z"/>
+          <path d="M12 2a10 10 0 100 20A10 10 0 0012 2zm0 3a2.5 2.5 0 110 5 2.5 2.5 0 010-5zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/>
+        </svg>
+      </div>
+      <div class="logo-text">
+        <div class="sub">特定非営利活動法人</div>
+        <div class="main">西三河在宅介護センター</div>
+      </div>
+    </a>
+    <nav>
+      <a href="#about">私たちについて</a>
+      <a href="#services">サービス</a>
+      <a href="#kominka">古民家</a>
+      <a href="#flow">ご利用の流れ</a>
+      <a href="#info">会社概要</a>
+      <a href="#contact" class="nav-contact">お問い合わせ</a>
+    </nav>
+    <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</header>
+
+<!-- Mobile Nav -->
+<div class="mobile-nav" id="mobileNav">
+  <a href="#about" onclick="toggleMenu()">私たちについて</a>
+  <a href="#services" onclick="toggleMenu()">サービス内容</a>
+  <a href="#kominka" onclick="toggleMenu()">古民家について</a>
+  <a href="#flow" onclick="toggleMenu()">ご利用の流れ</a>
+  <a href="#info" onclick="toggleMenu()">会社概要・アクセス</a>
+  <a href="#contact" onclick="toggleMenu()">お問い合わせ</a>
+</div>
+
+<!-- ===== HERO ===== -->
+<section id="hero">
+  <div class="hero-pattern"></div>
+  <div class="container">
+    <div class="hero-content">
+      <div>
+        <div class="hero-badge">愛知県刈谷市 地域密着型介護</div>
+        <h1 class="hero-title">
+          あなたの<em>「住み慣れた</em><br>
+          <em>我が家」</em>で、<br>
+          笑顔をつなぐ介護を。
+        </h1>
+        <p class="hero-desc">
+          特定非営利活動法人 西三河在宅介護センターは、<br>
+          1990年の設立以来30年以上にわたり、<br>
+          刈谷市の皆様に寄り添い続けてきました。
+        </p>
+        <div class="hero-btns">
+          <a href="#services" class="btn btn-primary">サービス内容を見る</a>
+          <a href="#contact" class="btn btn-outline">まずは相談する</a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="hero-card-main">
+          <div class="hero-img-placeholder">
+            <svg viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
+            <p>📸 施設・スタッフの写真をここに</p>
+          </div>
+          <div class="hero-card-info">
+            <h3>築100年の古民家で温かい介護を</h3>
+            <p>歴史ある建物が持つ、ほっとする空間でサービスをご提供しています。</p>
+          </div>
+        </div>
+        <div class="hero-float-1">
+          <div class="float-icon">🏠</div>
+          <div>
+            <strong>居宅介護支援</strong><br>
+            <small style="color:var(--text-l)">ケアプラン作成</small>
+          </div>
+        </div>
+        <div class="hero-float-2">
+          <div class="float-icon">👐</div>
+          <div>
+            <strong>訪問介護</strong><br>
+            <small style="color:var(--text-l)">お自宅へ伺います</small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== STATS ===== -->
+<section id="stats">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat-item">
+        <div class="stat-num">30<span>年以上</span></div>
+        <div class="stat-label">介護サービスの実績</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">3<span>つの</span></div>
+        <div class="stat-label">充実した介護サービス</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">100<span>年</span></div>
+        <div class="stat-label">古民家で癒しの空間を</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">刈谷<span>市</span></div>
+        <div class="stat-label">地域密着で安心サポート</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ABOUT ===== -->
+<section id="about" class="section">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-img">
+        <div class="about-img-inner">
+          <svg viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
+          <p>📸 スタッフ・施設の写真をここに</p>
+        </div>
+        <div class="about-img-badge">
+          <div class="num">1990</div>
+          <div class="txt">年設立<br>地域を支えて30年以上</div>
+        </div>
+      </div>
+      <div class="about-text">
+        <span class="tag">私たちについて</span>
+        <h2 style="margin-top:16px;">
+          「住み慣れた地域で、<br>
+          安心して暮らし続けてほしい」
+        </h2>
+        <p>
+          特定非営利活動法人 西三河在宅介護センターは、1990年12月8日の設立以来、愛知県刈谷市において地域に密着した在宅介護サービスを提供してまいりました。
+        </p>
+        <p>
+          私たちが大切にしているのは、利用者様お一人おひとりの「その人らしい生活」を支えること。スタッフ全員が利用者様とそのご家族の気持ちに寄り添い、笑顔あふれるサービスを目指しています。
+        </p>
+        <div class="about-values">
+          <div class="about-value-item">
+            <div class="value-icon">❤️</div>
+            <div class="value-text">
+              <strong>利用者様本位のサービス</strong>
+              <span>一人ひとりの気持ちに寄り添い、その方らしい暮らしを支えます</span>
+            </div>
+          </div>
+          <div class="about-value-item">
+            <div class="value-icon">🌿</div>
+            <div class="value-text">
+              <strong>地域との深いつながり</strong>
+              <span>刈谷市に根ざし、地域の方々と連携した安心の介護を届けます</span>
+            </div>
+          </div>
+          <div class="about-value-item">
+            <div class="value-icon">🤝</div>
+            <div class="value-text">
+              <strong>ご家族への継続的サポート</strong>
+              <span>介護するご家族も安心できるよう、丁寧にサポートいたします</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SERVICES ===== -->
+<section id="services" class="section">
+  <div class="container">
+    <h2 class="section-title">サービス内容</h2>
+    <p class="section-sub">3つの介護サービスで、在宅生活をトータルにサポートします</p>
+    <div class="services-grid">
+
+      <!-- 居宅介護支援 -->
+      <div class="service-card">
+        <div class="service-card-header">
+          <div class="service-icon-wrap orange">🏠</div>
+          <h3>居宅介護支援</h3>
+          <p class="service-card-desc">ケアマネジャーがご本人・ご家族のご希望を丁寧に聞き取り、最適なケアプランを作成します。</p>
+        </div>
+        <div class="service-card-body">
+          <ul class="service-features">
+            <li>ケアプラン（介護サービス計画）の作成</li>
+            <li>介護保険の申請・手続きサポート</li>
+            <li>各サービス事業所との連絡・調整</li>
+            <li>定期的なモニタリング・見直し</li>
+            <li>ご家族への相談・情報提供</li>
+          </ul>
+          <a href="#contact" class="service-link">詳しく相談する →</a>
+        </div>
+      </div>
+
+      <!-- 訪問介護 -->
+      <div class="service-card">
+        <div class="service-card-header">
+          <div class="service-icon-wrap green">🚶</div>
+          <h3>訪問介護</h3>
+          <p class="service-card-desc">ホームヘルパーがご自宅へお伺いし、日常生活のお手伝いをさせていただきます。</p>
+        </div>
+        <div class="service-card-body">
+          <ul class="service-features">
+            <li>身体介護（入浴・排泄・食事の介助）</li>
+            <li>生活援助（掃除・洗濯・調理・買い物）</li>
+            <li>通院等の乗降介助</li>
+            <li>服薬確認・健康状態の観察</li>
+            <li>緊急時の対応・連絡</li>
+          </ul>
+          <a href="#contact" class="service-link">詳しく相談する →</a>
+        </div>
+      </div>
+
+      <!-- 通所介護 -->
+      <div class="service-card">
+        <div class="service-card-header">
+          <div class="service-icon-wrap blue">☀️</div>
+          <h3>通所介護（デイサービス）</h3>
+          <p class="service-card-desc">築100年の古民家でゆったりと過ごしながら、心身の活性化と社会参加を支援します。</p>
+        </div>
+        <div class="service-card-body">
+          <ul class="service-features">
+            <li>送迎サービス（お迎え・お送り）</li>
+            <li>食事の提供（昼食・おやつ）</li>
+            <li>入浴サービス</li>
+            <li>機能訓練・レクリエーション活動</li>
+            <li>日常動作訓練（リハビリ）</li>
+          </ul>
+          <a href="#contact" class="service-link">詳しく相談する →</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== KOMINKA ===== -->
+<section id="kominka" class="section">
+  <div class="container">
+    <div class="kominka-inner">
+      <div class="kominka-text">
+        <span class="tag">古民家について</span>
+        <h2 style="margin-top:16px;">
+          築100年の古民家が<br>
+          もたらす、<em style="color:var(--primary); font-style:normal;">ほっとする</em>空間
+        </h2>
+        <p>
+          当センターの通所介護は、昭和初期に建てられた築100年の趣ある古民家で運営しています。木の温もりや縁側の空間、昔懐かしいたたずまいが、利用者様に「おうちに帰ってきたような」安らぎを与えてくれます。
+        </p>
+        <p>
+          現代のきらびやかな施設とは一線を画した、人の心に寄り添う空間。長年にわたって地域の方々が集い、語らい、笑い合ってきた場所で、今日も温かいサービスをお届けしています。
+        </p>
+        <div class="kominka-points">
+          <div class="kominka-point">
+            <div class="k-icon">🌳</div>
+            <strong>木のぬくもり</strong>
+            <span>昔ながらの木造建築</span>
+          </div>
+          <div class="kominka-point">
+            <div class="k-icon">🪟</div>
+            <strong>縁側・中庭</strong>
+            <span>四季を感じる空間</span>
+          </div>
+          <div class="kominka-point">
+            <div class="k-icon">🍵</div>
+            <strong>くつろぎの雰囲気</strong>
+            <span>ゆったりとした時間</span>
+          </div>
+          <div class="kominka-point">
+            <div class="k-icon">🏘️</div>
+            <strong>地域の歴史</strong>
+            <span>刈谷の町と共に歩む</span>
+          </div>
+        </div>
+      </div>
+      <div class="kominka-img-wrap">
+        <div class="kominka-img">
+          <svg viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
+          <p>📸 古民家の写真をここに</p>
+        </div>
+        <div class="kominka-year">
+          <span>建築から</span>
+          築100年
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FLOW ===== -->
+<section id="flow" class="section">
+  <div class="container">
+    <h2 class="section-title">ご利用の流れ</h2>
+    <p class="section-sub">初めての方もご安心ください。まずはお気軽にご相談ください</p>
+    <div class="flow-steps">
+      <div class="flow-step">
+        <div class="flow-num">1</div>
+        <div class="flow-body">
+          <h4>お問い合わせ・ご相談</h4>
+          <p>お電話またはお問い合わせフォームよりご連絡ください。ご本人やご家族の状況、お困りのことなどをお聞きします。費用や手続きについての疑問もお気軽にどうぞ。</p>
+        </div>
+      </div>
+      <div class="flow-step">
+        <div class="flow-num">2</div>
+        <div class="flow-body">
+          <h4>介護保険の申請（未申請の場合）</h4>
+          <p>介護保険の申請がお済みでない場合は、担当のケアマネジャーがサポートします。市区町村への申請手続きをご一緒に進めます。</p>
+        </div>
+      </div>
+      <div class="flow-step">
+        <div class="flow-num">3</div>
+        <div class="flow-body">
+          <h4>ご自宅へのご訪問・アセスメント</h4>
+          <p>担当スタッフがご自宅へ伺い、生活状況や身体状況、ご希望などを丁寧にお伺いします。ご家族のご要望もしっかり聞かせていただきます。</p>
+        </div>
+      </div>
+      <div class="flow-step">
+        <div class="flow-num">4</div>
+        <div class="flow-body">
+          <h4>ケアプランの作成・サービス担当者会議</h4>
+          <p>アセスメントをもとに、ご本人・ご家族と一緒にケアプランを作成します。各サービス事業所と連携して、最適なサービス内容を調整します。</p>
+        </div>
+      </div>
+      <div class="flow-step">
+        <div class="flow-num">5</div>
+        <div class="flow-body">
+          <h4>サービス開始</h4>
+          <p>ケアプランに沿ってサービスを開始します。定期的にモニタリングを実施し、状況の変化に合わせてプランを見直していきます。安心してお任せください。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== INFO / COMPANY ===== -->
+<section id="info" class="section">
+  <div class="container">
+    <h2 class="section-title">会社概要・アクセス</h2>
+    <p class="section-sub">特定非営利活動法人 西三河在宅介護センター</p>
+    <div class="info-grid">
+      <div class="info-table-wrap">
+        <h3>法人概要</h3>
+        <table class="info-tbl">
+          <tr>
+            <th>法人名</th>
+            <td>特定非営利活動法人<br>西三河在宅介護センター</td>
+          </tr>
+          <tr>
+            <th>設立</th>
+            <td>1990年（平成2年）12月8日</td>
+          </tr>
+          <tr>
+            <th>事業内容</th>
+            <td>居宅介護支援・訪問介護・通所介護</td>
+          </tr>
+          <tr>
+            <th>所在地</th>
+            <td>〒448-0001<br>愛知県刈谷市御幸町3-78</td>
+          </tr>
+          <tr>
+            <th>営業時間</th>
+            <td>月曜〜土曜　8:30〜17:30</td>
+          </tr>
+          <tr>
+            <th>定休日</th>
+            <td>日曜・祝日・年末年始</td>
+          </tr>
+          <tr>
+            <th>対応地域</th>
+            <td>刈谷市を中心とした西三河地域</td>
+          </tr>
+        </table>
+      </div>
+      <div>
+        <div class="map-wrap">
+          <div class="map-placeholder">
+            <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+            <p>地図が表示されます</p>
+          </div>
+          <div class="map-info">
+            <address>
+              〒448-0001<br>
+              愛知県刈谷市御幸町3-78<br>
+              西三河在宅介護センター
+            </address>
+            <a href="https://www.google.com/maps/search/愛知県刈谷市御幸町3-78" target="_blank" class="map-link">
+              Googleマップで見る →
+            </a>
+          </div>
+        </div>
+        <div style="background:var(--white); border-radius:16px; padding:20px 24px; margin-top:20px; box-shadow:0 2px 16px rgba(61,43,26,0.06);">
+          <h4 style="font-family:'Noto Serif JP',serif; color:var(--primary-d); font-size:0.95rem; margin-bottom:12px;">🚌 アクセス</h4>
+          <p style="font-size:0.88rem; color:var(--text-m); line-height:1.8;">
+            名鉄三河線「刈谷市駅」より<br>
+            お車・タクシーでのアクセスが便利です。<br>
+            詳しくはお電話でお問い合わせください。
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CONTACT ===== -->
+<section id="contact" class="section">
+  <div class="container">
+    <div class="contact-inner">
+      <h2>お気軽にご相談ください</h2>
+      <p>
+        介護のこと、サービスのこと、費用のこと、何でもお気軽にどうぞ。<br>
+        専門のスタッフが丁寧にお答えします。
+      </p>
+      <div class="contact-cards">
+        <div class="contact-card">
+          <div class="c-icon">📞</div>
+          <h4>お電話でのお問い合わせ</h4>
+          <div class="tel">0566-XX-XXXX</div>
+          <div class="hours">受付時間：月〜土 8:30〜17:30</div>
+        </div>
+        <div class="contact-card">
+          <div class="c-icon">📍</div>
+          <h4>窓口でのご相談</h4>
+          <div style="color:white; font-size:0.95rem; margin-top:6px;">愛知県刈谷市御幸町3-78</div>
+          <div class="hours">お気軽にご来所ください<br>（事前にお電話いただけると確実です）</div>
+        </div>
+      </div>
+      <div class="contact-form">
+        <h3>📩 メールでのお問い合わせ</h3>
+        <div class="form-row">
+          <div class="form-group">
+            <label>お名前 <span class="req">必須</span></label>
+            <input type="text" placeholder="山田 花子">
+          </div>
+          <div class="form-group">
+            <label>ふりがな <span class="req">必須</span></label>
+            <input type="text" placeholder="やまだ はなこ">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>電話番号</label>
+            <input type="tel" placeholder="0566-XX-XXXX">
+          </div>
+          <div class="form-group">
+            <label>メールアドレス <span class="req">必須</span></label>
+            <input type="email" placeholder="example@email.com">
+          </div>
+        </div>
+        <div class="form-group">
+          <label>ご相談内容</label>
+          <select>
+            <option value="">選択してください</option>
+            <option>居宅介護支援について</option>
+            <option>訪問介護について</option>
+            <option>通所介護（デイサービス）について</option>
+            <option>介護保険の申請について</option>
+            <option>見学・体験について</option>
+            <option>その他</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>メッセージ</label>
+          <textarea placeholder="ご質問やご要望などをご自由にお書きください。"></textarea>
+        </div>
+        <div class="form-submit">
+          <button type="submit">送信する</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-about">
+        <div class="footer-logo">
+          <span>特定非営利活動法人</span>
+          西三河在宅介護センター
+        </div>
+        <p>
+          1990年の設立以来、愛知県刈谷市で地域に密着した在宅介護サービスを提供しています。住み慣れた地域で笑顔で暮らし続けられるよう、スタッフ一同サポートいたします。
+        </p>
+      </div>
+      <div>
+        <h4>サービス</h4>
+        <ul>
+          <li><a href="#services">居宅介護支援</a></li>
+          <li><a href="#services">訪問介護</a></li>
+          <li><a href="#services">通所介護（デイサービス）</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>法人情報</h4>
+        <ul>
+          <li><a href="#about">私たちについて</a></li>
+          <li><a href="#kominka">古民家について</a></li>
+          <li><a href="#flow">ご利用の流れ</a></li>
+          <li><a href="#info">会社概要・アクセス</a></li>
+          <li><a href="#contact">お問い合わせ</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2024 特定非営利活動法人 西三河在宅介護センター. All rights reserved.</p>
+      <nav>
+        <a href="#">プライバシーポリシー</a>
+        <a href="#">サイトマップ</a>
+      </nav>
+    </div>
+  </div>
+</footer>
+
+<!-- ===== Scroll to Top ===== -->
+<button id="toTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="トップへ戻る">↑</button>
+
+<script>
+  // Header scroll effect
+  const header = document.getElementById('header');
+  window.addEventListener('scroll', () => {
+    header.classList.toggle('scrolled', window.scrollY > 40);
+    document.getElementById('toTop').classList.toggle('visible', window.scrollY > 400);
+  });
+
+  // Mobile menu
+  function toggleMenu() {
+    const nav = document.getElementById('mobileNav');
+    nav.classList.toggle('open');
+  }
+
+  // Smooth scroll for anchor links
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const target = document.querySelector(a.getAttribute('href'));
+      if (target) {
+        e.preventDefault();
+        const top = target.getBoundingClientRect().top + window.scrollY - 68;
+        window.scrollTo({ top, behavior: 'smooth' });
+      }
+    });
+  });
+
+  // Intersection Observer for fade-in
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = '1';
+        entry.target.style.transform = 'translateY(0)';
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.service-card, .flow-step, .about-value-item, .kominka-point, .stat-item').forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(20px)';
+    el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+    observer.observe(el);
+  });
+</script>
+</body>
+</html>
