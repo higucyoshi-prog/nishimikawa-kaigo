@@ -635,9 +635,11 @@
     }
     .contact-inner h2::after { display: none; }
     .contact-inner p { color: rgba(255,255,255,0.8); font-size: 0.98rem; margin-bottom: 40px; line-height: 1.9; }
+    
+    /* NEW: Phone Layout */
     .contact-cards {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 1fr;
       gap: 20px;
       margin-bottom: 32px;
     }
@@ -645,15 +647,19 @@
       background: rgba(255,255,255,0.1);
       border: 1px solid rgba(255,255,255,0.2);
       border-radius: 16px;
-      padding: 28px 20px;
+      padding: 32px;
       backdrop-filter: blur(4px);
-      transition: background 0.2s;
+      text-align: left;
     }
-    .contact-card:hover { background: rgba(255,255,255,0.15); }
-    .contact-card .c-icon { font-size: 2rem; margin-bottom: 10px; }
-    .contact-card h4 { color: var(--white); font-size: 0.95rem; font-weight: 700; margin-bottom: 8px; }
-    .contact-card .tel { color: var(--white); font-family: 'Noto Serif JP', serif; font-size: 1.6rem; font-weight: 700; letter-spacing: 0.05em; }
-    .contact-card .hours { color: rgba(255,255,255,0.7); font-size: 0.78rem; margin-top: 4px; }
+    .contact-card h4 { color: var(--white); font-size: 1.2rem; font-weight: 700; margin-bottom: 24px; display: flex; align-items: center; gap: 10px; }
+    .tel-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 32px; }
+    .tel-item { border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 12px; }
+    .tel-item:last-child { border-bottom: none; }
+    .tel-label { color: rgba(255,255,255,0.7); font-size: 0.85rem; margin-bottom: 4px; }
+    .tel-number { color: var(--white); font-family: 'Noto Serif JP', serif; font-size: 1.8rem; font-weight: 700; letter-spacing: 0.05em; display: block; }
+    .tel-number.sub { font-size: 1.4rem; }
+    .hours { color: rgba(255,255,255,0.7); font-size: 0.85rem; margin-top: 24px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 16px; }
+
     .contact-form {
       background: var(--white);
       border-radius: 20px;
@@ -785,7 +791,7 @@
       .services-grid { grid-template-columns: 1fr; }
       .kominka-inner { grid-template-columns: 1fr; gap: 40px; }
       .info-grid { grid-template-columns: 1fr; }
-      .contact-cards { grid-template-columns: 1fr; }
+      .tel-list { grid-template-columns: 1fr; gap: 24px; }
       .stats-grid { grid-template-columns: repeat(2, 1fr); }
       .stat-item:nth-child(2) { border-right: none; }
       .footer-grid { grid-template-columns: 1fr; gap: 32px; }
@@ -799,12 +805,12 @@
       .stats-grid { grid-template-columns: 1fr 1fr; }
       .kominka-points { grid-template-columns: 1fr 1fr; }
       .contact-form { padding: 24px 20px; }
+      .tel-number { font-size: 1.6rem; }
     }
   </style>
 </head>
 <body>
 
-<!-- ===== HEADER ===== -->
 <header id="header">
   <div class="header-inner">
     <a href="#" class="logo">
@@ -833,7 +839,6 @@
   </div>
 </header>
 
-<!-- Mobile Nav -->
 <div class="mobile-nav" id="mobileNav">
   <a href="#about" onclick="toggleMenu()">私たちについて</a>
   <a href="#services" onclick="toggleMenu()">サービス内容</a>
@@ -843,7 +848,6 @@
   <a href="#contact" onclick="toggleMenu()">お問い合わせ</a>
 </div>
 
-<!-- ===== HERO ===== -->
 <section id="hero">
   <div class="hero-pattern"></div>
   <div class="container">
@@ -895,7 +899,6 @@
   </div>
 </section>
 
-<!-- ===== STATS ===== -->
 <section id="stats">
   <div class="container">
     <div class="stats-grid">
@@ -919,7 +922,6 @@
   </div>
 </section>
 
-<!-- ===== ABOUT ===== -->
 <section id="about" class="section">
   <div class="container">
     <div class="about-grid">
@@ -973,14 +975,12 @@
   </div>
 </section>
 
-<!-- ===== SERVICES ===== -->
 <section id="services" class="section">
   <div class="container">
     <h2 class="section-title">サービス内容</h2>
     <p class="section-sub">3つの介護サービスで、在宅生活をトータルにサポートします</p>
     <div class="services-grid">
 
-      <!-- 居宅介護支援 -->
       <div class="service-card">
         <div class="service-card-header">
           <div class="service-icon-wrap orange">🏠</div>
@@ -999,7 +999,6 @@
         </div>
       </div>
 
-      <!-- 訪問介護 -->
       <div class="service-card">
         <div class="service-card-header">
           <div class="service-icon-wrap green">🚶</div>
@@ -1018,7 +1017,6 @@
         </div>
       </div>
 
-      <!-- 通所介護 -->
       <div class="service-card">
         <div class="service-card-header">
           <div class="service-icon-wrap blue">☀️</div>
@@ -1041,7 +1039,6 @@
   </div>
 </section>
 
-<!-- ===== KOMINKA ===== -->
 <section id="kominka" class="section">
   <div class="container">
     <div class="kominka-inner">
@@ -1094,7 +1091,6 @@
   </div>
 </section>
 
-<!-- ===== FLOW ===== -->
 <section id="flow" class="section">
   <div class="container">
     <h2 class="section-title">ご利用の流れ</h2>
@@ -1139,7 +1135,6 @@
   </div>
 </section>
 
-<!-- ===== INFO / COMPANY ===== -->
 <section id="info" class="section">
   <div class="container">
     <h2 class="section-title">会社概要・アクセス</h2>
@@ -1190,7 +1185,7 @@
               愛知県刈谷市御幸町3-78<br>
               西三河在宅介護センター
             </address>
-            <a href="https://www.google.com/maps/search/愛知県刈谷市御幸町3-78" target="_blank" class="map-link">
+            <a href="https://www.google.com/maps/place/%E3%80%92448-0001+%E6%84%9B%E7%9F%A5%E7%9C%8C%E5%88%88%E8%B0%B7%E5%B8%82%E5%BE%A1%E5%B9%B8%E7%94%BA%EF%BC%93%E4%B8%81%E7%9B%AE%EF%BC%97%EF%BC%98" target="_blank" class="map-link">
               Googleマップで見る →
             </a>
           </div>
@@ -1198,9 +1193,9 @@
         <div style="background:var(--white); border-radius:16px; padding:20px 24px; margin-top:20px; box-shadow:0 2px 16px rgba(61,43,26,0.06);">
           <h4 style="font-family:'Noto Serif JP',serif; color:var(--primary-d); font-size:0.95rem; margin-bottom:12px;">🚌 アクセス</h4>
           <p style="font-size:0.88rem; color:var(--text-m); line-height:1.8;">
-            名鉄三河線「刈谷市駅」より<br>
-            お車・タクシーでのアクセスが便利です。<br>
-            詳しくはお電話でお問い合わせください。
+            名鉄三河線「刈谷市駅」より徒歩約15分。<br>
+            お車・タクシーでのアクセスも便利です。<br>
+            駐車場も完備しております。
           </p>
         </div>
       </div>
@@ -1208,7 +1203,6 @@
   </div>
 </section>
 
-<!-- ===== CONTACT ===== -->
 <section id="contact" class="section">
   <div class="container">
     <div class="contact-inner">
@@ -1217,20 +1211,34 @@
         介護のこと、サービスのこと、費用のこと、何でもお気軽にどうぞ。<br>
         専門のスタッフが丁寧にお答えします。
       </p>
+      
       <div class="contact-cards">
         <div class="contact-card">
-          <div class="c-icon">📞</div>
-          <h4>お電話でのお問い合わせ</h4>
-          <div class="tel">0566-XX-XXXX</div>
-          <div class="hours">受付時間：月〜土 8:30〜17:30</div>
-        </div>
-        <div class="contact-card">
-          <div class="c-icon">📍</div>
-          <h4>窓口でのご相談</h4>
-          <div style="color:white; font-size:0.95rem; margin-top:6px;">愛知県刈谷市御幸町3-78</div>
-          <div class="hours">お気軽にご来所ください<br>（事前にお電話いただけると確実です）</div>
+          <h4>📞 お電話でのお問い合わせ</h4>
+          <div class="tel-list">
+            <div class="tel-item">
+              <div class="tel-label">総合受付（代表）</div>
+              <a href="tel:0566280500" class="tel-number">0566-28-0500</a>
+            </div>
+            <div class="tel-item">
+              <div class="tel-label">居宅介護支援 直通</div>
+              <a href="tel:0566688600" class="tel-number sub">0566-68-8600</a>
+            </div>
+            <div class="tel-item">
+              <div class="tel-label">通所介護（デイサービス） 直通</div>
+              <a href="tel:0566280563" class="tel-number sub">0566-28-0563</a>
+            </div>
+            <div class="tel-item">
+              <div class="tel-label">訪問介護 直通</div>
+              <a href="tel:0566780587" class="tel-number sub">0566-78-0587</a>
+            </div>
+          </div>
+          <div class="hours">
+            受付時間：月曜〜土曜 8:30〜17:30（日曜・祝日・年末年始を除く）
+          </div>
         </div>
       </div>
+
       <div class="contact-form">
         <h3>📩 メールでのお問い合わせ</h3>
         <div class="form-row">
@@ -1246,7 +1254,7 @@
         <div class="form-row">
           <div class="form-group">
             <label>電話番号</label>
-            <input type="tel" placeholder="0566-XX-XXXX">
+            <input type="tel" placeholder="0566-28-0500">
           </div>
           <div class="form-group">
             <label>メールアドレス <span class="req">必須</span></label>
@@ -1277,7 +1285,6 @@
   </div>
 </section>
 
-<!-- ===== FOOTER ===== -->
 <footer>
   <div class="container">
     <div class="footer-grid">
@@ -1288,6 +1295,9 @@
         </div>
         <p>
           1990年の設立以来、愛知県刈谷市で地域に密着した在宅介護サービスを提供しています。住み慣れた地域で笑顔で暮らし続けられるよう、スタッフ一同サポートいたします。
+        </p>
+        <p style="margin-top: 10px; font-size: 0.9rem; color: var(--white);">
+          代表電話：0566-28-0500
         </p>
       </div>
       <div>
@@ -1310,7 +1320,7 @@
       </div>
     </div>
     <div class="footer-bottom">
-      <p>© 2024 特定非営利活動法人 西三河在宅介護センター. All rights reserved.</p>
+      <p>© 2026 特定非営利活動法人 西三河在宅介護センター. All rights reserved.</p>
       <nav>
         <a href="#">プライバシーポリシー</a>
         <a href="#">サイトマップ</a>
@@ -1319,7 +1329,6 @@
   </div>
 </footer>
 
-<!-- ===== Scroll to Top ===== -->
 <button id="toTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="トップへ戻る">↑</button>
 
 <script>
