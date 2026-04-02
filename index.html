@@ -447,6 +447,9 @@
     }
     .service-link:hover { background: rgba(192,101,42,0.15); }
 
+    /* ===== Updates ===== */
+    #updates { background: var(--bg); padding: 80px 0; }
+
     /* ===== Kominka ===== */
     #kominka { background: var(--bg3); }
     .kominka-inner {
@@ -601,17 +604,6 @@
       overflow: hidden;
       box-shadow: 0 2px 16px rgba(61,43,26,0.06);
     }
-    .map-placeholder {
-      background: linear-gradient(135deg, #e8ddd0 0%, #d0c0a8 100%);
-      height: 280px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-      gap: 10px;
-    }
-    .map-placeholder svg { width: 48px; height: 48px; fill: rgba(100,70,40,0.4); }
-    .map-placeholder p { color: rgba(100,70,40,0.7); font-size: 0.85rem; }
     .map-info { padding: 20px 24px; }
     .map-info address { font-style: normal; font-size: 0.92rem; color: var(--text-m); line-height: 1.8; }
     .map-link {
@@ -805,7 +797,6 @@
 </head>
 <body>
 
-<!-- ===== HEADER ===== -->
 <header id="header">
   <div class="header-inner">
     <a href="#" class="logo">
@@ -834,7 +825,6 @@
   </div>
 </header>
 
-<!-- Mobile Nav -->
 <div class="mobile-nav" id="mobileNav">
   <a href="#about" onclick="toggleMenu()">私たちについて</a>
   <a href="#services" onclick="toggleMenu()">サービス内容</a>
@@ -844,7 +834,6 @@
   <a href="#contact" onclick="toggleMenu()">お問い合わせ</a>
 </div>
 
-<!-- ===== HERO ===== -->
 <section id="hero">
   <div class="hero-pattern"></div>
   <div class="container">
@@ -881,7 +870,6 @@
   </div>
 </section>
 
-<!-- ===== STATS ===== -->
 <section id="stats">
   <div class="container">
     <div class="stats-grid">
@@ -905,7 +893,6 @@
   </div>
 </section>
 
-<!-- ===== ABOUT ===== -->
 <section id="about" class="section">
   <div class="container">
     <div class="about-grid">
@@ -958,14 +945,12 @@
   </div>
 </section>
 
-<!-- ===== SERVICES ===== -->
 <section id="services" class="section">
   <div class="container">
     <h2 class="section-title">サービス内容</h2>
     <p class="section-sub">3つの介護サービスで、在宅生活をトータルにサポートします</p>
     <div class="services-grid">
 
-      <!-- 居宅介護支援 -->
       <div class="service-card">
         <div class="service-card-header">
           <div class="service-icon-wrap orange">🏠</div>
@@ -984,7 +969,6 @@
         </div>
       </div>
 
-      <!-- 訪問介護 -->
       <div class="service-card">
         <div class="service-card-header">
           <div class="service-icon-wrap green">🚶</div>
@@ -1003,7 +987,6 @@
         </div>
       </div>
 
-      <!-- 通所介護 -->
       <div class="service-card">
         <div class="service-card-header">
           <div class="service-icon-wrap blue">☀️</div>
@@ -1026,7 +1009,7 @@
   </div>
 </section>
 
-<section id="updates" class="section" style="background: var(--bg); padding: 60px 0;">
+<section id="updates" class="section">
   <div class="container">
     <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;">
       
@@ -1048,13 +1031,10 @@
         <h3 style="font-family: 'Noto Serif JP', serif; color: var(--primary-d); font-size: 1.1rem; margin-bottom: 16px; display: flex; align-items: center; gap: 8px;">
           <span style="color: #ff9800;">🎨</span> 今月のレク表
         </h3>
-        <div style="background: var(--bg2); border-radius: 12px; flex-grow: 1; min-height: 200px; display: flex; align-items: center; justify-content: center; border: 1px dashed var(--border);">
-          <p style="font-size: 0.85rem; color: var(--text-m); text-align: center; line-height: 1.6;">
-            <span style="font-size: 1.2rem;">🗓️</span><br>
-            4月のレクリエーション<br>準備中
-          </p>
+        <div style="background: var(--white); border-radius: 12px; flex-grow: 1; min-height: 200px; overflow: hidden; border: 1px solid var(--border);">
+          <img src="reku_2026_04.jpg" alt="4月のレクリエーション表" style="width: 100%; height: 100%; object-fit: contain;">
         </div>
-        <p style="font-size: 0.8rem; color: var(--text-l); text-align: center; margin-top: 12px;">※クリックで拡大表示（予定）</p>
+        <p style="font-size: 0.8rem; color: var(--text-l); text-align: center; margin-top: 12px;">※画像をクリックで拡大（予定）</p>
       </div>
 
       <div style="background: white; border-radius: 20px; padding: 24px; box-shadow: 0 4px 20px rgba(0,0,0,0.05); border: 1px solid var(--border); display: flex; flex-direction: column;">
@@ -1080,7 +1060,6 @@
   </div>
 </section>
 
-<!-- ===== KOMINKA ===== -->
 <section id="kominka" class="section">
   <div class="container">
     <div class="kominka-inner">
@@ -1132,7 +1111,6 @@
   </div>
 </section>
 
-<!-- ===== FLOW ===== -->
 <section id="flow" class="section">
   <div class="container">
     <h2 class="section-title">ご利用の流れ</h2>
@@ -1177,101 +1155,96 @@
   </div>
 </section>
 
-<!-- ===== INFO / COMPANY ===== -->
 <section id="info" class="section">
   <div class="container">
     <h2 class="section-title">会社概要・アクセス</h2>
     <p class="section-sub">特定非営利活動法人 西三河在宅介護センター</p>
+    
     <div class="info-grid">
       <div class="info-table-wrap">
-<div style="margin-bottom: 32px; display: grid; grid-template-columns: 1fr 1fr; gap: 20px; width: 100%;">
-  
-  <a href="disclosure.html" class="btn btn-outline" style="font-size: 1rem; padding: 15px; text-align: center; border-radius: 16px; display: flex; align-items: center; justify-content: center; gap: 10px; background: white; box-shadow: 0 4px 12px rgba(61,43,26,0.08); line-height: 1.4;">
-    <span style="font-size: 1.4rem;">📋</span>
-    <div style="text-align: left;">運営規定<br>重要事項説明</div>
-  </a>
+        <div style="margin-bottom: 32px; display: grid; grid-template-columns: 1fr 1fr; gap: 20px; width: 100%;">
+          <a href="disclosure.html" class="btn btn-outline" style="font-size: 1rem; padding: 15px; text-align: center; border-radius: 16px; display: flex; align-items: center; justify-content: center; gap: 10px; background: white; box-shadow: 0 4px 12px rgba(61,43,26,0.08); line-height: 1.4;">
+            <span style="font-size: 1.4rem;">📋</span>
+            <div style="text-align: left;">運営規定<br>重要事項説明</div>
+          </a>
+          <a href="disclosure.html#policy" class="btn btn-outline" style="font-size: 1rem; padding: 15px; text-align: center; border-radius: 16px; display: flex; align-items: center; justify-content: center; gap: 10px; background: white; box-shadow: 0 4px 12px rgba(61,43,26,0.08); line-height: 1.4;">
+            <span style="font-size: 1.4rem;">🛡️</span>
+            <div style="text-align: left;">各種指針<br>プライバシー</div>
+          </a>
+        </div>
 
-  <a href="disclosure.html#policy" class="btn btn-outline" style="font-size: 1rem; padding: 15px; text-align: center; border-radius: 16px; display: flex; align-items: center; justify-content: center; gap: 10px; background: white; box-shadow: 0 4px 12px rgba(61,43,26,0.08); line-height: 1.4;">
-    <span style="font-size: 1.4rem;">🛡️</span>
-    <div style="text-align: left;">各種指針<br>プライバシー</div>
-  </a>
-
-</div>
         <h3>法人概要</h3>
-<table class="info-tbl">
-  <tr>
-    <th>法人名</th>
-    <td>特定非営利活動法人<br>西三河在宅介護センター</td>
-  </tr>
-  <tr>
-    <th>設立</th>
-    <td>平成11年（1999年）12月8日</td>
-  </tr>
-  <tr>
-    <th>事業内容</th>
-    <td>
-      ・居宅介護支援（愛知県指定第2372900148）<br>
-      ・訪問介護（愛知県指定第2372901161）<br>
-      ・通所介護（愛知県指定第2372901179）
-    </td>
-  </tr>
-  <tr>
-    <th>所在地</th>
-    <td>〒448-0001<br>愛知県刈谷市御幸町3-78</td>
-  </tr>
-  <tr>
-    <th>営業時間</th>
-    <td>月曜〜土曜　9:00〜18:00</td>
-  </tr>
-  <tr>
-    <th>定休日</th>
-    <td>日曜・祝日・年末年始</td>
-  </tr>
-  <tr>
-    <th>対応地域</th>
-    <td>刈谷市を中心とした西三河地域</td>
-  </tr>
-</table>
-</table>
-      </div> 
-       <div style="width: 100%; margin-top: 40px;">
-  
-  <div class="map-wrap" style="margin-bottom: 24px;">
-    <iframe
-      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3268.975400377121!2d136.99157670000002!3d34.9822809!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60049cc5dd058cc7%3A0xcf06fa6547fc1013!2z44CSNDQ4LTA4MjEg5oSb55-l55yM5YiI6LC35biC5b6h5bm455S677yT5LiB55uu77yX77yY!5e0!3m2!1sja!2sjp!4v1775085788598!5m2!1sja!2sjp"
-      width="100%"
-      height="350" 
-      style="border:0; display:block; border-radius: 16px;"
-      allowfullscreen=""
-      loading="lazy"
-      referrerpolicy="no-referrer-when-downgrade">
-    </iframe>
-    <div class="map-info" style="background: white; border-radius: 0 0 16px 16px; border: 1px solid var(--border); border-top: none; padding: 20px;">
-      <address style="font-style: normal; font-size: 0.95rem; line-height: 1.6;">
-        〒448-0001 愛知県刈谷市御幸町3-78 西三河在宅介護センター
-      </address>
-      <a href="https://www.google.com/maps/search/愛知県刈谷市御幸町3-78" target="_blank" class="map-link">
-        Googleマップで見る →
-      </a>
-    </div>
-  </div>
+        <table class="info-tbl">
+          <tr>
+            <th>法人名</th>
+            <td>特定非営利活動法人<br>西三河在宅介護センター</td>
+          </tr>
+          <tr>
+            <th>設立</th>
+            <td>平成11年（1999年）12月8日</td>
+          </tr>
+          <tr>
+            <th>事業内容</th>
+            <td>
+              ・居宅介護支援（愛知県指定第2372900148）<br>
+              ・訪問介護（愛知県指定第2372901161）<br>
+              ・通所介護（愛知県指定第2372901179）
+            </td>
+          </tr>
+          <tr>
+            <th>所在地</th>
+            <td>〒448-0001<br>愛知県刈谷市御幸町3-78</td>
+          </tr>
+          <tr>
+            <th>営業時間</th>
+            <td>月曜〜土曜　9:00〜18:00</td>
+          </tr>
+          <tr>
+            <th>定休日</th>
+            <td>日曜・祝日・年末年始</td>
+          </tr>
+          <tr>
+            <th>対応地域</th>
+            <td>刈谷市を中心とした西三河地域</td>
+          </tr>
+        </table>
+      </div>
 
-  <div style="background:var(--white); border-radius:16px; padding:24px; box-shadow:0 2px 16px rgba(61,43,26,0.06); border: 1px solid var(--border);">
-    <h4 style="font-family:'Noto Serif JP',serif; color:var(--primary-d); font-size:1.1rem; margin-bottom:12px; display: flex; align-items: center; gap: 8px;">
-      <span>🚌</span> アクセス
-    </h4>
-    <p style="font-size:0.95rem; color:var(--text-m); line-height:1.8;">
-      名鉄三河線「<strong>刈谷市駅</strong>」より🚶 徒歩約<strong>5分</strong>（約300m）<br>
-      お車でお越しの場合は、敷地内の駐車場をご利用いただけます。場所が不明な際はお気軽にお電話ください。
-    </p>
-  </div>
+      <div style="width: 100%;">
+        <div class="map-wrap" style="margin-bottom: 24px;">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3268.975400377121!2d136.99157670000002!3d34.9822809!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60049cc5dd058cc7%3A0xcf06fa6547fc1013!2z44CSNDQ4LTA4MjEg5oSb55-l55yM5YiI6LC35biC5b6h5bm455S677yT5LiB55uu77yX77yY!5e0!3m2!1sja!2sjp!4v1775085788598!5m2!1sja!2sjp"
+            width="100%"
+            height="350" 
+            style="border:0; display:block; border-radius: 16px;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+          <div class="map-info" style="background: white; border-radius: 0 0 16px 16px; border: 1px solid var(--border); border-top: none; padding: 20px;">
+            <address style="font-style: normal; font-size: 0.95rem; line-height: 1.6;">
+              〒448-0001 愛知県刈谷市御幸町3-78 西三河在宅介護センター
+            </address>
+            <a href="https://www.google.com/maps/search/愛知県刈谷市御幸町3-78" target="_blank" class="map-link">
+              Googleマップで見る →
+            </a>
+          </div>
+        </div>
 
-</div>
+        <div style="background:var(--white); border-radius:16px; padding:24px; box-shadow:0 2px 16px rgba(61,43,26,0.06); border: 1px solid var(--border);">
+          <h4 style="font-family:'Noto Serif JP',serif; color:var(--primary-d); font-size:1.1rem; margin-bottom:12px; display: flex; align-items: center; gap: 8px;">
+            <span>🚌</span> アクセス
+          </h4>
+          <p style="font-size:0.95rem; color:var(--text-m); line-height:1.8;">
+            名鉄三河線「<strong>刈谷市駅</strong>」より🚶 徒歩約<strong>5分</strong>（約300m）<br>
+            お車でお越しの場合は、敷地内の駐車場をご利用いただけます。場所が不明な際はお気軽にお電話ください。
+          </p>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- ===== CONTACT ===== -->
 <section id="contact" class="section">
   <div class="container">
     <div class="contact-inner">
@@ -1294,7 +1267,6 @@
           <div class="hours">お気軽にご来所ください<br>（事前にお電話いただけると確実です）</div>
         </div>
       </div>
-      <!-- 各直通電話 -->
       <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin-bottom:32px;">
         <div class="contact-card" style="padding:20px 14px;">
           <div class="c-icon" style="font-size:1.4rem;">🏠</div>
@@ -1362,7 +1334,6 @@
   </div>
 </section>
 
-<!-- ===== FOOTER ===== -->
 <footer>
   <div class="container">
     <div class="footer-grid">
@@ -1383,7 +1354,7 @@
           <li><a href="#services">通所介護（デイサービス）</a></li>
         </ul>
       </div>
-<div>
+      <div>
         <h4>法人情報</h4>
         <ul>
           <li><a href="#about">私たちについて</a></li>
@@ -1401,7 +1372,7 @@
           </li>
         </ul>
       </div>
-  </div>
+    </div>
     <div class="footer-bottom">
       <p>© 2024 特定非営利活動法人 西三河在宅介護センター. All rights reserved.</p>
       <nav>
@@ -1412,7 +1383,6 @@
   </div>
 </footer>
 
-<!-- ===== Scroll to Top ===== -->
 <button id="toTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="トップへ戻る">↑</button>
 
 <script>
