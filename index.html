@@ -268,16 +268,17 @@
       box-shadow: 0 20px 60px rgba(61,43,26,0.15);
     }
     .hero-img-placeholder {
-      background: linear-gradient(135deg, #e8c4a0 0%, #d4956a 50%, #b86a3d 100%);
-      height: 240px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-      gap: 12px;
+      height: 260px;
+      overflow: hidden;
+      position: relative;
     }
-    .hero-img-placeholder svg { width: 64px; height: 64px; fill: rgba(255,255,255,0.8); }
-    .hero-img-placeholder p { color: rgba(255,255,255,0.9); font-size: 0.85rem; font-weight: 500; }
+    .hero-img-placeholder img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 60%;
+      display: block;
+    }
     .hero-card-info { padding: 24px; }
     .hero-card-info h3 { font-family: 'Noto Serif JP', serif; font-size: 1.1rem; color: var(--primary-d); margin-bottom: 8px; }
     .hero-card-info p { font-size: 0.9rem; color: var(--text-m); }
@@ -340,18 +341,18 @@
       position: relative;
     }
     .about-img-inner {
-      background: linear-gradient(135deg, #c8a47e 0%, #a07050 100%);
       border-radius: 20px;
       height: 380px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-      gap: 16px;
+      overflow: hidden;
       box-shadow: 0 16px 48px rgba(61,43,26,0.18);
     }
-    .about-img-inner svg { width: 80px; height: 80px; fill: rgba(255,255,255,0.7); }
-    .about-img-inner p { color: rgba(255,255,255,0.85); font-size: 1rem; }
+    .about-img-inner img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+    }
     .about-img-badge {
       position: absolute;
       bottom: -20px; right: -20px;
@@ -482,18 +483,18 @@
       position: relative;
     }
     .kominka-img {
-      background: linear-gradient(160deg, #d4a070 0%, #8b5e3a 60%, #5d3d1f 100%);
       border-radius: 20px;
       height: 400px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-      gap: 16px;
+      overflow: hidden;
       box-shadow: 0 16px 48px rgba(61,43,26,0.2);
     }
-    .kominka-img svg { width: 80px; height: 80px; fill: rgba(255,255,255,0.65); }
-    .kominka-img p { color: rgba(255,255,255,0.8); font-size: 0.9rem; }
+    .kominka-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 60%;
+      display: block;
+    }
     .kominka-year {
       position: absolute;
       top: -16px; left: -16px;
@@ -857,7 +858,7 @@
         </h1>
         <p class="hero-desc">
           特定非営利活動法人 西三河在宅介護センターは、<br>
-          1990年の設立以来30年以上にわたり、<br>
+          平成11年（1999年）の設立以来25年以上にわたり、<br>
           刈谷市の皆様に寄り添い続けてきました。
         </p>
         <div class="hero-btns">
@@ -868,26 +869,11 @@
       <div class="hero-visual">
         <div class="hero-card-main">
           <div class="hero-img-placeholder">
-            <svg viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
-            <p>📸 施設・スタッフの写真をここに</p>
+            <img src="gaikan.jpg" alt="西三河在宅介護センター外観・古民家">
           </div>
           <div class="hero-card-info">
             <h3>築100年の古民家で温かい介護を</h3>
             <p>歴史ある建物が持つ、ほっとする空間でサービスをご提供しています。</p>
-          </div>
-        </div>
-        <div class="hero-float-1">
-          <div class="float-icon">🏠</div>
-          <div>
-            <strong>居宅介護支援</strong><br>
-            <small style="color:var(--text-l)">ケアプラン作成</small>
-          </div>
-        </div>
-        <div class="hero-float-2">
-          <div class="float-icon">👐</div>
-          <div>
-            <strong>訪問介護</strong><br>
-            <small style="color:var(--text-l)">お自宅へ伺います</small>
           </div>
         </div>
       </div>
@@ -900,7 +886,7 @@
   <div class="container">
     <div class="stats-grid">
       <div class="stat-item">
-        <div class="stat-num">30<span>年以上</span></div>
+        <div class="stat-num">25<span>年以上</span></div>
         <div class="stat-label">介護サービスの実績</div>
       </div>
       <div class="stat-item">
@@ -925,12 +911,11 @@
     <div class="about-grid">
       <div class="about-img">
         <div class="about-img-inner">
-          <svg viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
-          <p>📸 スタッフ・施設の写真をここに</p>
+          <img src="staff.jpg" alt="西三河在宅介護センター スタッフ">
         </div>
         <div class="about-img-badge">
-          <div class="num">1990</div>
-          <div class="txt">年設立<br>地域を支えて30年以上</div>
+          <div class="num">1999</div>
+          <div class="txt">年設立<br>地域を支えて25年以上</div>
         </div>
       </div>
       <div class="about-text">
@@ -1082,8 +1067,7 @@
       </div>
       <div class="kominka-img-wrap">
         <div class="kominka-img">
-          <svg viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
-          <p>📸 古民家の写真をここに</p>
+          <img src="gaikan.jpg" alt="築100年の古民家外観">
         </div>
         <div class="kominka-year">
           <span>建築から</span>
@@ -1154,7 +1138,7 @@
           </tr>
           <tr>
             <th>設立</th>
-            <td>1990年（平成2年）12月8日</td>
+            <td>平成11年（1999年）12月8日</td>
           </tr>
           <tr>
             <th>事業内容</th>
@@ -1180,10 +1164,15 @@
       </div>
       <div>
         <div class="map-wrap">
-          <div class="map-placeholder">
-            <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
-            <p>地図が表示されます</p>
-          </div>
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3268.975400377121!2d136.99157670000002!3d34.9822809!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60049cc5dd058cc7%3A0xcf06fa6547fc1013!2z44CSNDQ4LTA4MjEg5oSb55-l55yM5YiI6LC35biC5b6h5bm455S677yT5LiB55uu77yX77yY!5e0!3m2!1sja!2sjp!4v1775085788598!5m2!1sja!2sjp"
+            width="100%"
+            height="280"
+            style="border:0; display:block;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
           <div class="map-info">
             <address>
               〒448-0001<br>
@@ -1198,9 +1187,10 @@
         <div style="background:var(--white); border-radius:16px; padding:20px 24px; margin-top:20px; box-shadow:0 2px 16px rgba(61,43,26,0.06);">
           <h4 style="font-family:'Noto Serif JP',serif; color:var(--primary-d); font-size:0.95rem; margin-bottom:12px;">🚌 アクセス</h4>
           <p style="font-size:0.88rem; color:var(--text-m); line-height:1.8;">
-            名鉄三河線「刈谷市駅」より<br>
-            お車・タクシーでのアクセスが便利です。<br>
-            詳しくはお電話でお問い合わせください。
+            名鉄三河線「<strong>刈谷市駅</strong>」より<br>
+            🚶 徒歩約<strong>5分</strong>（約300m）<br><br>
+            お車でお越しの場合は<br>
+            お電話でご確認ください。
           </p>
         </div>
       </div>
@@ -1217,11 +1207,11 @@
         介護のこと、サービスのこと、費用のこと、何でもお気軽にどうぞ。<br>
         専門のスタッフが丁寧にお答えします。
       </p>
-      <div class="contact-cards">
+      <div class="contact-cards" style="grid-template-columns: 1fr 1fr; gap: 16px;">
         <div class="contact-card">
           <div class="c-icon">📞</div>
-          <h4>お電話でのお問い合わせ</h4>
-          <div class="tel">0566-XX-XXXX</div>
+          <h4>代表電話</h4>
+          <div class="tel">0566-28-0500</div>
           <div class="hours">受付時間：月〜土 8:30〜17:30</div>
         </div>
         <div class="contact-card">
@@ -1231,47 +1221,69 @@
           <div class="hours">お気軽にご来所ください<br>（事前にお電話いただけると確実です）</div>
         </div>
       </div>
+      <!-- 各直通電話 -->
+      <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin-bottom:32px;">
+        <div class="contact-card" style="padding:20px 14px;">
+          <div class="c-icon" style="font-size:1.4rem;">🏠</div>
+          <h4 style="font-size:0.85rem;">居宅介護支援 直通</h4>
+          <div style="color:white; font-family:'Noto Serif JP',serif; font-size:1.15rem; font-weight:700; margin-top:6px; letter-spacing:0.03em;">0566-68-8600</div>
+        </div>
+        <div class="contact-card" style="padding:20px 14px;">
+          <div class="c-icon" style="font-size:1.4rem;">☀️</div>
+          <h4 style="font-size:0.85rem;">通所介護 直通</h4>
+          <div style="color:white; font-family:'Noto Serif JP',serif; font-size:1.15rem; font-weight:700; margin-top:6px; letter-spacing:0.03em;">0566-28-0563</div>
+        </div>
+        <div class="contact-card" style="padding:20px 14px;">
+          <div class="c-icon" style="font-size:1.4rem;">🚶</div>
+          <h4 style="font-size:0.85rem;">訪問介護 直通</h4>
+          <div style="color:white; font-family:'Noto Serif JP',serif; font-size:1.15rem; font-weight:700; margin-top:6px; letter-spacing:0.03em;">0566-78-0587</div>
+        </div>
+      </div>
       <div class="contact-form">
         <h3>📩 メールでのお問い合わせ</h3>
-        <div class="form-row">
-          <div class="form-group">
-            <label>お名前 <span class="req">必須</span></label>
-            <input type="text" placeholder="山田 花子">
+        <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thanks.html">
+          <input type="hidden" name="form-name" value="contact">
+          <p style="display:none;"><input name="bot-field"></p>
+          <div class="form-row">
+            <div class="form-group">
+              <label>お名前 <span class="req">必須</span></label>
+              <input type="text" name="name" placeholder="山田 花子" required>
+            </div>
+            <div class="form-group">
+              <label>ふりがな <span class="req">必須</span></label>
+              <input type="text" name="furigana" placeholder="やまだ はなこ" required>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>電話番号</label>
+              <input type="tel" name="tel" placeholder="0566-28-0500">
+            </div>
+            <div class="form-group">
+              <label>メールアドレス <span class="req">必須</span></label>
+              <input type="email" name="email" placeholder="example@email.com" required>
+            </div>
           </div>
           <div class="form-group">
-            <label>ふりがな <span class="req">必須</span></label>
-            <input type="text" placeholder="やまだ はなこ">
+            <label>ご相談内容</label>
+            <select name="category">
+              <option value="">選択してください</option>
+              <option>居宅介護支援について</option>
+              <option>訪問介護について</option>
+              <option>通所介護（デイサービス）について</option>
+              <option>介護保険の申請について</option>
+              <option>見学・体験について</option>
+              <option>その他</option>
+            </select>
           </div>
-        </div>
-        <div class="form-row">
           <div class="form-group">
-            <label>電話番号</label>
-            <input type="tel" placeholder="0566-XX-XXXX">
+            <label>メッセージ</label>
+            <textarea name="message" placeholder="ご質問やご要望などをご自由にお書きください。"></textarea>
           </div>
-          <div class="form-group">
-            <label>メールアドレス <span class="req">必須</span></label>
-            <input type="email" placeholder="example@email.com">
+          <div class="form-submit">
+            <button type="submit">送信する</button>
           </div>
-        </div>
-        <div class="form-group">
-          <label>ご相談内容</label>
-          <select>
-            <option value="">選択してください</option>
-            <option>居宅介護支援について</option>
-            <option>訪問介護について</option>
-            <option>通所介護（デイサービス）について</option>
-            <option>介護保険の申請について</option>
-            <option>見学・体験について</option>
-            <option>その他</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label>メッセージ</label>
-          <textarea placeholder="ご質問やご要望などをご自由にお書きください。"></textarea>
-        </div>
-        <div class="form-submit">
-          <button type="submit">送信する</button>
-        </div>
+        </form>
       </div>
     </div>
   </div>
@@ -1287,7 +1299,7 @@
           西三河在宅介護センター
         </div>
         <p>
-          1990年の設立以来、愛知県刈谷市で地域に密着した在宅介護サービスを提供しています。住み慣れた地域で笑顔で暮らし続けられるよう、スタッフ一同サポートいたします。
+          平成11年（1999年）12月8日の設立以来、愛知県刈谷市で地域に密着した在宅介護サービスを提供しています。住み慣れた地域で笑顔で暮らし続けられるよう、スタッフ一同サポートいたします。
         </p>
       </div>
       <div>
